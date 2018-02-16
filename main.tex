@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{$<sj02806>$}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -48,13 +48,14 @@
   \end{center}
 
   \begin{solution}
-    % Write your solution here
+    i) For the partial function, the domain should be $x \in Z$ and the codomain should be that $y \in R^{+}$ and the set of values = $x \in [- \infty, + \infty]$ and $ y \in [0, + \infty]$. \\
+    ii) For the total function, the domain could be $x \in N$ and codomain could be that $y \in R^{+}$ and the set of values = $x \in [0, + \infty]$ and $y \in [0, + \infty]$.
   \end{solution}
   
-  \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
+  \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$ï¿½ such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
-    % Write your solution here
+    It is given that the smallest ith bit of any bit string should be 1 if it is not empty. However, when S is not an empty string with all 0s it will have no codomain to map onto hence it is not a total function or a function.
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -65,7 +66,10 @@
   \end{subparts}
 
   \begin{solution}
-    % Write your solution here
+   For an equivalence relation symmetric, reflexive and transitive should hold.\\  
+   i) Not an equivalence relation since it is not transitive because if X is in class with Y and Y is in class with Z then it is not necessary that X and Z are in the same class. \\
+   ii) It is an equivalence relation. It is reflexive since X and Y should rhyme with themselves. It is symmetric since when X and Y rhymes then Y and X rhymes as well. It is also transitive since if X rhymes with Y and Y rhymes with Z then X should rhyme with Z also.\\
+   iii) It is not an equivalence relation. It is reflexive because X is a subset of itself and Y is a subset of itself also. However, it is not symmetric since X is a subset of Y but it is not mentioned if Y is a subset of X which we cannot assume.
   \end{solution}
 
 \end{parts}
@@ -73,7 +77,7 @@
 %Long questions (75)
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
   \begin{solution}
-    % Write your solution here
+    We start by making a few considerations. Let f:U $\xrightarrow{}$ W and also that A is a subset of U and B is a subset of W. Considering f:U $\rightarrow{}$ W and that B is a subset of W, therefore $f^{-1}(B)$ contains the set of elements of U whose images belong to B. Mathematically, $f^{-1} (B)$ would be equal to the set $\{U | f(U) \in B\}$. Now inorder to prove that $f(A) \subseteq B$. We can take x = f(a) where x is an element in f(a) where a in in the set A. If we can further show that x is in B we are done. Since a is in $f^{-1}(B)$, $f^{-1} = \{U | f(U) \in B\}$ shows that f(a) is in B and since we have established that x = f(a) then it should be in B.
   \end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
@@ -88,7 +92,13 @@
 \end{center}
 
   \begin{solution}
-    % Write your solution here
+    For the function to be bijective, it should be injective as well as surjective. There are 2 ways, we either consider the possibility that the subset contains n or the possibility that it does not contain n.\\
+    Now in order to prove that the function f is injective we take 2 subsets $F_1$ and $F_2$ and consider that $f(F_1) = f(F_2)$. Then we would have:\\
+   $ F_1 - {n} = f(F_1) = f(F_2) = F_2 - {n}$ for the first possibility and\\
+    $F_1 \cup {n} = f(F_1) = f(F_2) = F_2 \cup {n}$ if we consider the 2nd possibility. \\
+    Hence since $F_1 = F_2$ it is injective. \\
+    For the surjective part,  we consider the first possibility that B is an element of the range of f. And if B contains n, then the size of $B−{n}$ is even and it maps to B under f. Considering the second possibility that even if B does not contain n, then $B\cup{n}$ has even size and it also maps to B under f. Therefore because every element in the domain has an image it is surjective.\\
+    Therefore since it is injective and surjective, it is also bijective.
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -121,11 +131,20 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
   \begin{parts}
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
   \begin{solution}
-    % Write your solution here
+    For n $>=$ 1,\\
+    Stem height = n - 1\\
+    Cap height = $\lfloor{n/2}\rfloor + 1$\\
+    Cap width = n + 1\\
+    Hence if we want the total number of dots then it would be:\\
+    $\sum_{i = 1}^{\lfloor{n/2}\rfloor} [(n+1)-i] + 2(n-1)$
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
-    % Write your solution here
+    n = 20\\
+    Total height = Cap height + Stem height\\
+    Total height = $n - 1 + \lfloor{n/2}\rfloor + 1$\\
+    Total height = 9 + 20/2 + 1\\
+    Total height = 20
   \end{solution}
 \end{parts}
 
@@ -153,7 +172,9 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
   \part[10] To begin, prove that the Fibonacci series is countable.
  
     \begin{solution}
-    % Write your solution here
+    In order to show that the fibonacci series is countable we can find a function that maps every set of element in the fibonnaci series to every set of element in natural numbers. This way we will be making a bijection from fibonnaci series to natural numbers; mapping the fibonnaci series onto natural numbers:\\
+    Let X = fibonnaci series = 1, 1, 2, 3, 5, 8, 13...\\
+    and Y = natural numbers = 0, 1, 2, 3, 4, 5, 6...
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Modified Wythoff Array is countable. 
 
